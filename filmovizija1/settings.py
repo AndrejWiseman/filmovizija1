@@ -5,6 +5,12 @@ from os import getenv
 import cloudinary_storage
 from dotenv import load_dotenv
 
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+import cloudinary.api
+import cloudinary_storage
+
 from pathlib import Path
 
 load_dotenv()
@@ -35,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'cloudinary',
     'cloudinary_storage',
+    'cloudinary',
 
     'home',
 
@@ -131,16 +137,19 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
-    'API_KEY': os.getenv('API_KEY'),
-    'API_SECRET': os.getenv('API_SECRET')
-}
+cloudinary.config(
+    cloud_name = os.getenv('CLOUD_NAME'),
+    api_key = os.getenv('API_KEY'),
+    api_secret = os.getenv('API_SECRET'),
+    secure=True
+)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
