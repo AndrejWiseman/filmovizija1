@@ -1,5 +1,46 @@
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
 
 }
+
+
+
+.kontejner {
+    max-width: 1024px;
+    margin: 20px auto;
+}
+
+
+
+
+.leva-sekcija {
+
+}
+
+.desna-sekcija {
+
+}
+
+
+
+/*@media screen and (max-width: 764px) {*/
+/*    header {*/
+/*        width: 85%;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 500px) {*/
+/*    header {*/
+/*        width: 95%;*/
+/*    }*/
+/*}*/
+
+
+
 

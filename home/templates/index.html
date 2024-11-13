@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
 
 {% block content %}
-    <h1>Ovo je pocetna stranica</h1>
 
 
-    {% for film in filmovi %}
 
-        <h1>{{ film.naslov }}</h1>
-
-        <div style="width:200px;">
-            <img src="{{ film.slika.url }}" alt="slika">
-        </div>
-
-    {% endfor %}
 
 {% endblock %}
