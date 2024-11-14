@@ -1,6 +1,6 @@
 <!doctype html>
 {% load static %}
-<html lang="en" data-theme="coffee">
+<html lang="en" data-theme="sunset">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -18,17 +18,17 @@
 
     <title>{% block title %}Filmovizija{% endblock %}</title>
 </head>
-<body>
+<body class=" ">
 
     {% include 'navbar.html' %}
 
 
     <div class="kontejner">
 
-        {% include 'header.html' %}
+{#        {% include 'header.html' %}#}
 
-        <div>
-            <aside class="leva-sekcija">
+        <div class="glavna-sekcija">
+            <aside class="leva-sekcija w-full">
                 {% include 'sidebar.html' %}
             </aside>
 
@@ -42,7 +42,6 @@
 
 
     {% include 'footer.html' %}
-
 
 </body>
 </html>

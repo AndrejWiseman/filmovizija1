@@ -6,7 +6,8 @@
 }
 
 body {
-
+    background-color: oklch(var(--b2));
+    padding-top: 30px;
 }
 
 
@@ -19,27 +20,59 @@ body {
 
 
 
+.glavna-sekcija {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-top: 30px;
+}
+
 .leva-sekcija {
-
+    width: 100%;
 }
 
-.desna-sekcija {
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
 
+    margin: 0 auto;
+    /*border: 1px solid yellow;*/
+}
+.kartica {
+    max-width: 200px;
+    /*height: 300px;*/
+    margin: 0 auto;
+
+    /*border: 1px solid red;*/
+}
+.kartica-slika {
+    /*border: 1px solid purple;*/
 }
 
 
 
-/*@media screen and (max-width: 764px) {*/
-/*    header {*/
-/*        width: 85%;*/
-/*    }*/
-/*}*/
 
-/*@media screen and (max-width: 500px) {*/
-/*    header {*/
-/*        width: 95%;*/
-/*    }*/
-/*}*/
+@media screen and (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .glavna-sekcija {
+        grid-template-columns: 3fr;
+    }
+
+    .kartica {
+        width: 80%;
+    }
+}
 
 
 

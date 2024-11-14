@@ -2,7 +2,8 @@
 
 nav.navbar {
     width: 90%;
-    margin: 30px auto;
+    margin: 0 auto 30px auto;
     border-radius: 20px;
-    /*background-color: firebrick;*/
+
+    /*background-color: oklch(var(--b3));*/
 }
