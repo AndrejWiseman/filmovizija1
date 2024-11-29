@@ -13,35 +13,59 @@
     {% block js %}{% endblock %}
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/global.css' %}">#}
     {% block css %}{% endblock %}
 
     <title>{% block title %}Filmovizija{% endblock %}</title>
+
+    <script defer src="{% static 'js/main.js' %}"></script>
 </head>
 <body class=" ">
 
     {% include 'navbar.html' %}
 
+{#    {% block content %}#}
+    <div class="min-h-full">
 
-    <div class="kontejner">
+        <main class="py-10">
 
-{#        {% include 'header.html' %}#}
+            {% block slika %}
+            {% endblock %}
 
-        <div class="glavna-sekcija">
-            <aside class="leva-sekcija w-full">
-                {% include 'sidebar.html' %}
-            </aside>
 
-            <main class="desna-sekcija">
-                {% block content %}
-                {% endblock %}
-            </main>
-        </div>
+
+        </main>
+
+
 
     </div>
+{#    {% endblock %}#}
+
+
+
+
+{#    <div class="kontejner">#}
+{##}
+{#        {% include 'header.html' %}#}
+{##}
+{#        <div class="glavna-sekcija">#}
+{#            <aside class="leva-sekcija w-full">#}
+{#                {% include 'sidebar.html' %}#}
+{#            </aside>#}
+{##}
+{#            <main class="desna-sekcija">#}
+{#                {% block content %}#}
+{#                {% endblock %}#}
+{#            </main>#}
+{#        </div>#}
+{##}
+{#    </div>#}
 
 
     {% include 'footer.html' %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </body>
 </html>

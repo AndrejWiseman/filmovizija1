@@ -12,39 +12,39 @@ body {
 
 
 
-.kontejner {
-    max-width: 1024px;
-    margin: 20px auto;
-    padding: 10px;
-}
+/*.kontejner {*/
+/*    max-width: 1024px;*/
+/*    margin: 20px auto;*/
+/*    padding: 10px;*/
+/*}*/
 
 
 
 
-.glavna-sekcija {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10px;
-    margin-top: 30px;
-}
+/*.glavna-sekcija {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 2fr;*/
+/*    gap: 10px;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.leva-sekcija {
-    width: 100%;
-}
+/*.leva-sekcija {*/
+/*    width: 100%;*/
+/*}*/
 
-main {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+/*main {*/
+/*    width: 100%;*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr 1fr;*/
+/*    gap: 10px;*/
 
-    margin: 0 auto;
-    /*border: 1px solid yellow;*/
-}
+/*    margin: 0 auto;*/
+/*    !*border: 1px solid yellow;*!*/
+/*}*/
 .kartica {
-    max-width: 200px;
-    /*height: 300px;*/
-    margin: 0 auto;
+    /*max-width: 200px;*/
+    /*!*height: 300px;*!*/
+    /*margin: 0 auto;*/
 
     /*border: 1px solid red;*/
 }
@@ -55,25 +55,25 @@ main {
 
 
 
-@media screen and (max-width: 1024px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/*@media screen and (max-width: 1024px) {*/
+/*    main {*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*    }*/
+/*}*/
 
-@media screen and (max-width: 500px) {
-    main {
-        grid-template-columns: 1fr;
-    }
+/*@media screen and (max-width: 500px) {*/
+/*    main {*/
+/*        grid-template-columns: 1fr;*/
+/*    }*/
 
-    .glavna-sekcija {
-        grid-template-columns: 3fr;
-    }
+/*    .glavna-sekcija {*/
+/*        grid-template-columns: 3fr;*/
+/*    }*/
 
-    .kartica {
-        width: 80%;
-    }
-}
+/*    .kartica {*/
+/*        width: 80%;*/
+/*    }*/
+/*}*/
 
 
 
