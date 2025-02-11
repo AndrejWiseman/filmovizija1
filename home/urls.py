@@ -11,5 +11,4 @@ urlpatterns = [
     path('<slug:slug>', filmovi_detaljno, name='filmovi-detaljno'),
     path('rezultati-pretrage/', rezultati_pretrage, name='rezultati-pretrage'),
 
-
 ]

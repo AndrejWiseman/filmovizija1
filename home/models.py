@@ -1,12 +1,9 @@
-
-
 from django.db import models
 from django.urls import reverse
 # from tinymce.models import HTMLField
 from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
 from django.urls import reverse
-
 
 
 
@@ -51,12 +48,6 @@ class Serije(models.Model):
     tags = TaggableManager()
     preporuceno = models.BooleanField(default=False)
 
-    # def get_absolute_url(self):
-    #     return reverse('serija-detaljno', kwargs={'slug': self.slug})
-
-    # def get_episodes(self):
-    #     return self.epizoda_set.all()
-
     def get_episodes_by_season(self):
         episodes = self.epizoda_set.all()
         seasons = {}
@@ -90,12 +81,6 @@ class DomaceSerije(models.Model):
     tags = TaggableManager()
     preporuceno = models.BooleanField(default=False)
 
-    # def get_absolute_url(self):
-    #     return reverse('serija-detaljno', kwargs={'slug': self.slug})
-
-    # def get_episodes(self):
-    #     return self.epizoda_set.all()
-
     def get_episodes_by_season(self):
         # episodes = self.epizoda_set.all()
         episodes = self.domaciepizoda_set.all()
@@ -116,8 +101,3 @@ class DomaciEpizoda(models.Model):
 
     def __str__(self):
         return self.ep
-
-
-
-
-
