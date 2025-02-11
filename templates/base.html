@@ -1,6 +1,6 @@
 <!doctype html>
 {% load static %}
-<html lang="en" data-theme="retro">
+<html lang="en" data-theme="luxury">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -26,8 +26,82 @@
 
     <div class="min-h-full">
         <main class="py-10">
-            {% block slika %}
+
+            {% if show_header %}
+                <header>
+                    <div class="relative pb-32 bg-gray-800 mt-10">
+                        <div class="absolute inset-0 overflow-hidden">
+                          <img class="w-full h-full object-cover  kenburns-top" src="{% static 'images/cinema.jpg' %}" alt="Cinema" loading="lazy">
+                          <div class="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true"></div>
+                        </div>
+                        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+                          <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">Filmovizija</h1>
+                          <p class="mt-6 max-w-3xl text-xl text-gray-300">Gledajte filmove i serije sa prevodom i bez reklama!</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Overlapping cards -->
+                    <section class="-mt-32 max-w-7xl mx-auto relative z-10 pb-19 px-4 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
+                    {#        <h2 class="sr-only" id="contact-heading">Contact us</h2>#}
+                        <div class="grid grid-cols-1 gap-y-3  lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+
+                            {% for novo in novo %}
+
+                                <div class="flex flex-col bg-base-200 rounded-2xl shadow-xl">
+                                    <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+
+                                        <div class="flex flex-row  max-w-xs mx-auto overflow-hidden  rounded-lg shadow-lg  p-0">
+                                            <div class="badge badge-warning badge-outline absolute top-6 right-10">Novo!</div>
+
+                                            <div class="p-0 w-2/5">
+                                                <a href="{% url 'filmovi-detaljno' novo.slug %}">
+                                                    <img class="rounded object-cover w-full  h-40" src="{{ novo.slika.url }}" alt="{{ novo.naslov }}" />
+                                                </a>
+                                            </div>
+                                            <div class=" p-1 w-3/5 flex flex-col justify-center items-center">
+                                                <div>
+                                                    <a href="{% url 'filmovi-detaljno' novo.slug %}"
+                                                        class="block sm:mt-2 text-md font-bold text-base-content ">
+                                                        {{ novo.naslov }}
+                                                        <p class="mt-2 text-xs text-accent "><em>{{ novo.originalni_naslov }}</em></p>
+                                                        <p class="mt-2 text-sm text-accent ">
+                                                            {{ novo.godina }} / {{ novo.imdb_ocena }}
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6 bg-base-200 rounded-bl-2xl rounded-br-2xl md:px-8">
+                                      <a href="{% url 'filmovi-detaljno' novo.slug %}" class="text-base font-medium  hover:text-indigo-600">Pogledaj<span aria-hidden="true"> &rarr;</span></a>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </section>
+                </header>
+            {% endif %}
+
+
+        <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+
+            <section aria-labelledby="timeline-title" class="order-2 lg:col-start-3 lg:col-span-1">
+
+                  <!-- bocna traka -->
+                  {% include 'bocna-traka.html' %}
+
+            </section>
+
+            {% block content %}
+
             {% endblock %}
+
+        </div>
+
         </main>
     </div>
 

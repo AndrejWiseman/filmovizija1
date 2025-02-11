@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+{% endblock %}
+
+{% block title %}
+    Filmovi | Filmovizija
+{% endblock %}
+
+
+
+{% block lista %}
+
+        <!-- velika traka-->
+    <section aria-labelledby="applicant-information-title">
+        <div class="bg-base-200 shadow sm:rounded-lg">
+
+            <div class=" px-4 py-5 sm:px-6">
+
+                <!-- lista filmova -->
+                <div class="bg-base-100">
+                  <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
+                    <h2 class="text-3xl font-extrabold tracking-tight">Filmovi</h2>
+                    <p class="mt-4 max-w-3xl text-md">Ukupno: {{ total_filmova }}</p>
+
+                    <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+
+                        {% for qs in page_obj %}
+
+                            <div class="rounded-2xl shadow-xl">
+                                <a href="{% url 'filmovi-detaljno' qs.slug %}">
+                                    <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                                      <img src="{{ qs.slika.url }}" alt="{{ qs.naslov }}" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                                    </div>
+                                    <div class="mt-4 flex justify-between">
+                                      <div class="px-3 pb-1">
+                                        <h3 class="mt-1 text-md font-medium ">
+                                            {{ qs.naslov }}
+                                        </h3>
+                                        <p class="mt-2  ">
+                                            {{ qs.godina }} / {{ qs.imdb_ocena }}
+                                        </p>
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                  </div>
+
+                        {#Paginations#}
+                        <div class="mx-auto mb-5 pb-3 w-full text-center">
+                            <div class="join">
+                                <span class="step-links">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=1">
+                                            <button class="join-item btn">&laquo; prva</button>
+                                        </a>
+                                        <a href="?page={{ page_obj.previous_page_number }}">
+                                            <button class="join-item btn">&laquo; prethodna</button>
+                                        </a>
+                                    {% endif %}
+
+                                    <span class="current">
+                                        Strana {{ page_obj.number }} od {{ page_obj.paginator.num_pages }}.
+                                    </span>
+
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}">
+                                            <button class="join-item btn">sledeca</button>
+                                        </a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}">
+                                            <button class="join-item btn">poslednja &raquo;</button>
+                                        </a>
+                                    {% endif %}
+                                </span>
+                            </div>
+                        </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

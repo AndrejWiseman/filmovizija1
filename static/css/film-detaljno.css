@@ -1,0 +1,49 @@
+
+
+.detaljno-box {
+    display: flex;
+    gap: 30px;
+
+    /*border: 1px solid red;*/
+}
+
+.detaljno-box .slika {
+    flex: 1;
+
+    /*border: 3px solid white;*/
+}
+
+.detaljno-box .detalji {
+    flex: 2;
+
+    /*border: 1px solid blue;*/
+}
+
+.detalji .godina-zanr {
+    margin-top: 2rem;
+}
+.detalji .imdb {
+    display: flex;
+    gap: 8px;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+.detalji img {
+    width: 28px;
+
+}
+
+
+.detaljno-box .detalji .naslov-filma {
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+.detalji .godina-zanr .zanrovi {
+    display: flex;
+}
+
+.detalji .linkovi {
+
+
+}

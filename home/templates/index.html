@@ -6,224 +6,104 @@
 {% endblock %}
 
 
-{% block slika %}
+
+{% block content %}
 
 
-    <div class="relative pb-32 bg-gray-800 mt-10">
-        <div class="absolute inset-0 overflow-hidden">
-          <img class="w-full h-full object-cover  " src="{% static 'images/cinema.jpg' %}" alt="Cinema" loading="lazy">
-          <div class="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-          <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">Filmovizija</h1>
-          <p class="mt-6 max-w-3xl text-xl text-gray-300">Gledajte filmove i serije sa prevodom i bez reklama!</p>
-        </div>
-    </div>
+    {#================#}
+    <div class="space-y-6  lg:col-start-1 lg:col-span-2">
 
-       <!-- Overlapping cards -->
-  <section class="-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8" aria-labelledby="contact-heading">
-{#        <h2 class="sr-only" id="contact-heading">Contact us</h2>#}
-    <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+        {% block lista %}
 
-      <div class="flex flex-col bg-white rounded-2xl shadow-xl">
-        <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-            <div class="flex flex-row  max-w-xs mx-auto overflow-hidden  rounded-lg shadow-lg  p-0">
-                <div class="badge badge-warning badge-outline absolute top-10 right-10">Novo!</div>
-                <div class="p-0 w-2/5">
-                    <a href="#">
-                        <img class="rounded object-cover w-full  h-40" src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="Article" />
-                    </a>
-                </div>
-                <div class=" p-1 w-3/5 flex flex-col justify-center items-center">
-                    <div>
-                        <a href="#"
-                            class="block sm:mt-2 text-md font-bold text-base-content ">
-                            Lorem rem facere
-                            <p class="mt-2 text-xs text-accent "><em>Originalni naziv</em></p>
-                            <p class="mt-2 text-sm text-accent ">
-                                1984 / 9.2
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-          <a href="#" class="text-base font-medium text-indigo-700 hover:text-indigo-600">Pogledaj<span aria-hidden="true"> &rarr;</span></a>
-        </div>
-      </div>
-
-
-      <div class="flex flex-col bg-white rounded-2xl shadow-xl">
-        <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-            <div class="flex flex-row  max-w-xs mx-auto overflow-hidden  rounded-lg shadow-lg  p-0">
-                <div class="badge badge-warning badge-outline absolute top-10 right-10">Novo!</div>
-                <div class="p-0 w-2/5">
-                    <img class="rounded object-cover w-full  h-40" src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="Article" />
-                </div>
-                <div class=" p-1 w-3/5 flex flex-col justify-center items-center">
-                    <div>
-                        <a href="#"
-                            class="block sm:mt-2 text-md font-bold text-base-content ">
-                            Lorem rem facere
-                            <p class="mt-2 text-xs text-accent "><em>Originalni naziv</em></p>
-                            <p class="mt-2 text-sm text-accent ">
-                                1984 / 9.2
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-          <a href="#" class="text-base font-medium text-indigo-700 hover:text-indigo-600">Pogledaj<span aria-hidden="true"> &rarr;</span></a>
-        </div>
-      </div>
-
-      <div class="flex flex-col bg-white rounded-2xl shadow-xl">
-        <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-            <div class="flex flex-row  max-w-xs mx-auto overflow-hidden  rounded-lg shadow-lg  p-0">
-                <div class="badge badge-warning badge-outline absolute top-10 right-10">Novo!</div>
-                <div class="p-0 w-2/5">
-                    <img class="rounded object-cover w-full  h-40" src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="Article" />
-                </div>
-                <div class=" p-1 w-3/5 flex flex-col justify-center items-center">
-                    <div>
-                        <a href="#"
-                            class="block sm:mt-2 text-md font-bold text-base-content ">
-                            Lorem rem facere
-                            <p class="mt-2 text-xs text-accent "><em>Originalni naziv</em></p>
-                            <p class="mt-2 text-sm text-accent ">
-                                1984 / 9.2
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-          <a href="#" class="text-base font-medium text-indigo-700 hover:text-indigo-600">Pogledaj<span aria-hidden="true"> &rarr;</span></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-{#    =================#}
-
-{#    ======================#}
-
-{#    ostatak pocetne#}
-    <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-
-
-        <section aria-labelledby="timeline-title" class="lg:col-start-3 lg:col-span-1">
-            
-
-              <!-- bocna traka -->
-              {% include 'bocna-traka.html' %}
-
-            
-        </section>
-
-
-{#================#}
-      <div class="space-y-6 lg:col-start-1 lg:col-span-2">
-
-          <!-- velika traka-->
+        <!-- velika traka-->
         <section aria-labelledby="applicant-information-title">
-          <div class="bg-white shadow sm:rounded-lg">
-            <div class="px-4 py-5 sm:px-6">
-              <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">Filmovi i serije</h2>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">Ukupno: 999</p>
-            </div>
-            <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-
-
-                <!-- lista filmova -->
-                <div class="bg-base-200">
-                  <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Svi filmovi i serije</h2>
-                    <p class="mt-4 max-w-3xl text-lg text-indigo-200">Gledaj bez reklama</p>
-
-                    <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-                        
-
-                        <div class="">
-                            <a href="#">
-                                <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
-                                  <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="slika" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                                </div>
-                                <div class="mt-4 flex justify-between">
-                                  <div>
-                                    <h3 class="mt-1 text-lg font-medium text-white">
-                                        The Godfather
-                                    </h3>
-                                    <p class="mt-2 text-base text-indigo-200">
-                                        1971 / 9.2
-                                    </p>
-                                  </div>
-{#                                  <p class="mt-2 text-base text-indigo-200">9.2</p>#}
-                                </div>
-                            </a>
-                        </div>
-                        
-                        
-                    </div>
-                  </div>
+            <div class="bg-base-200 shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                  <h2 id="applicant-information-title" class="text-lg leading-6 font-medium ">Filmovi i serije</h2>
+                  <p class="mt-1 max-w-2xl text-sm ">Ukupno: {{ total_filmova }}</p>
                 </div>
 
 
+                <div class=" px-4 py-5 sm:px-6">
+
+                    <!-- lista filmova -->
+                    <div class="bg-base-100">
+                      <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-12 lg:px-8">
+                        <h2 class="text-3xl font-extrabold tracking-tight">Svi filmovi i serije</h2>
+{#                        <p class="mt-4 max-w-3xl text-lg">Gledaj bez reklama</p>#}
+
+                        <div class="mt-12 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+
+{#                            {% for fl in filmovi_list %}#}
+                            {% for qs in page_obj %}
+
+                                <div class="rounded-2xl shadow-xl">
+                                    <a href="{% url 'filmovi-detaljno' qs.slug %}">
+                                        <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                                          <img src="{{ qs.slika.url }}" alt="{{ qs.naslov }}" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                                        </div>
+                                        <div class="mt-4 flex justify-between">
+                                          <div class="px-3 pb-1">
+                                            <h3 class="mt-1 text-md font-medium ">
+                                                {{ qs.naslov }}
+                                            </h3>
+                                            <p class="mt-2  ">
+                                                {{ qs.godina }} / {{ qs.imdb_ocena }}
+                                            </p>
+                                          </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                      </div>
 
 
+
+
+                        {#Paginations#}
+                        <div class="mx-auto mb-5 pb-3 w-full text-center">
+                            <div class="join">
+                                <span class="step-links">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=1">
+                                            <button class="join-item btn">&laquo; prva</button>
+                                        </a>
+                                        <a href="?page={{ page_obj.previous_page_number }}">
+                                            <button class="join-item btn">&laquo; prethodna</button>
+                                        </a>
+                                    {% endif %}
+
+                                    <span class="current">
+                                        Strana {{ page_obj.number }} od {{ page_obj.paginator.num_pages }}.
+                                    </span>
+
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}">
+                                            <button class="join-item btn">sledeca</button>
+                                        </a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}">
+                                            <button class="join-item btn">poslednja &raquo;</button>
+                                        </a>
+                                    {% endif %}
+                                </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
 
-          </div>
         </section>
 
 
-      </div>
 
-
-
-
-
-
-
+        {% endblock %}
 
     </div>
 
-
-
-
-
-    
-{#    {% for film in filmovi %}#}
-{##}
-{#        <div class="kartica overflow-hidden mb-5">#}
-{#            <a href="#" class="">#}
-{##}
-{#                <div class="kartica-slika overflow-hidden ">#}
-{#                    <img src="{{ film.slika.url }}"#}
-{#                         alt="{{ film.naslov }}"#}
-{#                         class="rounded object-cover w-full  "#}
-{#                    >#}
-{#                </div>#}
-{#                #}
-{#                <div class="kartica-podaci pl-2">#}
-{#                    <h1 class="text-xl text-primary">Naslov</h1> #}
-{#                    <p class="flex items-center italic">1984 | #}
-{#                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#DBA506" class="size-4 mx-1">#}
-{#                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />#}
-{#                        </svg> 9.2#}
-{#                    </p>#}
-{#                </div>#}
-{##}
-{#            </a>#}
-{#        </div>#}
-{##}
-{##}
-{#    {% endfor %}#}
 
 {% endblock %}
