@@ -1,95 +1,27 @@
 
+<div class="bg-base-200 px-4 py-9 shadow sm:rounded-lg sm:px-6 mb-5">
+    <h2 id="timeline-title" class="text-lg font-medium ">Žanrovi:</h2>
 
-<div class="bg-white px-4 py-9 shadow sm:rounded-lg sm:px-6 mb-5">
-    <h2 id="timeline-title" class="text-lg font-medium text-gray-900">Zanrovi</h2>
     <div class="mt-3 flow-root">
 
+        <ul role="list" class="grid grid-cols-3 gap-3 sm:grid-cols-3 lg:grid-cols-3">
 
-        <ul role="list" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Horor</h3>
-                </div>
-              </div>
-                <p class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">99</p>
-            </a>
-          </li>
-
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <div class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Komedija</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </div>
-          </li>
-
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Naucna fantastika</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </a>
-          </li>
-
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Avantura</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </a>
-          </li>
-
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Fantazija</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </a>
-          </li>
-
-          <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Istorijski</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </a>
-          </li>
-
-        <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <a href="#" class="w-full flex items-center justify-between p-1 space-x-1">
-              <div class="flex-1 truncate">
-                <div class="flex items-center space-x-1">
-                  <h3 class="text-gray-900 text-sm font-medium truncate">Biografski</h3>
-{#                  <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Admin</span>#}
-                </div>
-              </div>
-                <p>99</p>
-            </a>
-        </li>
+            {% for tag in all_tags %}
+              <li class="col-span-1 bg-base-300 rounded-lg shadow divide-y divide-gray-200">
+                <a href="{% url 'tagovi' tag.name %}" class="w-full flex items-center justify-between p-1 space-x-1">
+                  <div class="flex-1 truncate">
+                    <div class="flex items-center space-x-1">
+                      <h3 class=" text-sm font-medium truncate">{{ tag.name | capfirst }}</h3>
+                    </div>
+                  </div>
+                    <p class="flex-shrink-0 inline-block px-2 py-0.5  text-xs font-medium bg-base-100 rounded-full">
+                        {{ tag.ukupno_tagova }}
+                    </p>
+                </a>
+              </li>
+            {% endfor %}
 
         </ul>
 
     </div>
-  </div>
+</div>
