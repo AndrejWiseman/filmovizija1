@@ -15,4 +15,4 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-# ovo je sa proba grid doslo
+
