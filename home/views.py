@@ -13,3 +13,6 @@ def index(request):
         # 'filmovi': filmovi,
     }
     return render(request, 'index.html', context)
+
+
+# ovo je sa proba grid doslo
